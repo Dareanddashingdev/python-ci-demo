@@ -1,0 +1,22 @@
+name: Python CI Workflow
+
+on: [push, pull_request]  # Run CI when code is pushed or PR is created
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use Linux machine
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # Get the latest code
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: pip install pytest
+
+      - name: Run Tests
+        run: pytest test_app.py
