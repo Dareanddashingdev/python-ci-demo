@@ -1,3 +1,5 @@
-def add(a,b):
-    return a+b
-Sum=add(2,3)
+def add(a, b):
+    return a + b  # Simple function for testing
+
+if __name__ == "__main__":
+    print("Sum:", add(5, 3))
